@@ -1,0 +1,151 @@
+/* ===========================
+   SISTEM ABSENSI MAHASISWA
+   File : style.css
+=========================== */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+  background:#f2f6fc;
+}
+
+/* Container */
+.container{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+}
+
+/* Card */
+.card{
+  width:400px;
+  background:#ffffff;
+  padding:25px;
+  border-radius:10px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Judul */
+h1,h2,h3{
+  text-align:center;
+  margin-bottom:15px;
+  color:#1f2937;
+}
+
+p{
+  margin:8px 0;
+  color:#444;
+}
+
+/* Garis */
+hr{
+  margin:15px 0;
+  border:1px solid #ddd;
+}
+
+/* Input */
+input{
+  width:100%;
+  padding:12px;
+  margin:10px 0;
+  border:1px solid #ccc;
+  border-radius:6px;
+  font-size:15px;
+}
+
+input:focus{
+  outline:none;
+  border-color:#2563eb;
+}
+
+/* Tombol */
+button{
+  width:100%;
+  padding:12px;
+  margin-top:10px;
+  border:none;
+  border-radius:6px;
+  color:white;
+  font-size:15px;
+  cursor:pointer;
+  transition:.3s;
+}
+
+/* Login */
+button{
+  background:#2563eb;
+}
+
+button:hover{
+  opacity:.9;
+}
+
+/* Tombol Hadir */
+.hadir{
+  background:#22c55e;
+}
+
+/* Tombol Izin */
+.izin{
+  background:#f59e0b;
+}
+
+/* Tombol Sakit */
+.sakit{
+  background:#ef4444;
+}
+
+/* Tombol Riwayat */
+.riwayat{
+  background:#6366f1;
+}
+
+/* Tombol Logout */
+.logout{
+  background:#374151;
+}
+
+/* Tabel */
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:15px;
+}
+
+table th{
+  background:#2563eb;
+  color:white;
+  padding:10px;
+}
+
+table td{
+  padding:10px;
+  border:1px solid #ddd;
+  text-align:center;
+}
+
+/* Hidden */
+.hidden{
+  display:none;
+}
+
+/* Responsive */
+@media(max-width:500px){
+  .card{
+    width:90%;
+    padding:20px;
+  }
+  h1{
+    font-size:24px;
+  }
+  button{
+    font-size:14px;
+  }
+}

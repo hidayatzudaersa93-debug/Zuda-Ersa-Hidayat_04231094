@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistem Absensi Mahasiswa</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOGIN -->
+<div class="container" id="loginPage">
+  <div class="card">
+    <h1>Sistem Absensi Mahasiswa</h1>
+    <p>Silakan login terlebih dahulu</p>
+
+    <input type="text" id="nama" placeholder="Masukkan Nama">
+    <input type="text" id="nim" placeholder="Masukkan NIM">
+
+    <button onclick="login()">Login</button>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div class="container hidden" id="dashboardPage">
+  <div class="card">
+    <h2>Dashboard Mahasiswa</h2>
+    <hr>
+    <p><strong>Nama :</strong> <span id="namaMahasiswa"></span></p>
+    <p><strong>NIM :</strong> <span id="nimMahasiswa"></span></p>
+    <p><strong>Tanggal :</strong> <span id="tanggal"></span></p>
+    <p><strong>Jam :</strong> <span id="jam"></span></p>
+    <hr>
+
+    <h3>Pilih Status Kehadiran</h3>
+    <button class="hadir" onclick="absen('Hadir')">🟢 Hadir</button>
+    <button class="izin" onclick="absen('Izin')">🟡 Izin</button>
+    <button class="sakit" onclick="absen('Sakit')">🔴 Sakit</button>
+    <button class="riwayat" onclick="lihatRiwayat()">📋 Riwayat Absensi</button>
+    <button class="logout" onclick="logout()">🚪 Logout</button>
+  </div>
+</div>
+
+<!-- RIWAYAT -->
+<div class="container hidden" id="riwayatPage">
+  <div class="card">
+    <h2>Riwayat Absensi</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Tanggal</th>
+          <th>Jam</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="dataRiwayat"></tbody>
+    </table>
+    <br>
+    <button onclick="kembaliDashboard()">⬅ Kembali</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
