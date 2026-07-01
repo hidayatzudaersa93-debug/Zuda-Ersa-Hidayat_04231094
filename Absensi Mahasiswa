@@ -1,1 +1,218 @@
-sfsd
+absensi-mahasiswa/
+│── index.html
+│── login.html
+│── dashboard.html
+│── absensi.html
+│── riwayat.html
+│── css/
+│     └── style.css
+│── js/
+│     ├── login.js
+│     ├── dashboard.js
+│     ├── absensi.js
+│     └── riwayat.js
+│── images/
+│     └── logo.png
+│── README.md
+
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/username/absensi-mahasiswa.git
+git push -u origin main
+
+absensi-mahasiswa/
+│── index.html
+│── dashboard.html
+│── css/
+│   └── style.css
+│── js/
+│   ├── login.js
+│   └── dashboard.js
+│── images/
+│   └── logo.png (opsional)
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Sistem Absensi Mahasiswa</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="login-box">
+
+    <h1>Sistem Absensi Mahasiswa</h1>
+
+    <input
+        type="text"
+        id="nama"
+        placeholder="Masukkan Nama"
+    >
+
+    <input
+        type="text"
+        id="nim"
+        placeholder="Masukkan NIM"
+    >
+
+    <button onclick="login()">
+        Login
+    </button>
+
+</div>
+
+<script src="js/login.js"></script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<h1>Dashboard</h1>
+
+<h2 id="welcome"></h2>
+
+<div class="menu">
+
+<a href="#">
+<button>Isi Absensi</button>
+</a>
+
+<a href="#">
+<button>Riwayat Absensi</button>
+</a>
+
+<button onclick="logout()">
+Logout
+</button>
+
+</div>
+
+</div>
+
+<script src="js/dashboard.js"></script>
+
+</body>
+</html>
+
+body{
+
+margin:0;
+padding:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#f0f2f5;
+
+}
+
+.login-box,
+.dashboard{
+
+width:350px;
+margin:80px auto;
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,.2);
+
+}
+
+h1{
+
+text-align:center;
+
+}
+
+input{
+
+width:100%;
+padding:12px;
+margin-top:15px;
+border-radius:5px;
+border:1px solid #ccc;
+box-sizing:border-box;
+
+}
+
+button{
+
+width:100%;
+padding:12px;
+margin-top:15px;
+background:#007bff;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+
+}
+
+button:hover{
+
+background:#0056b3;
+
+}
+
+.menu button{
+
+margin-top:10px;
+
+}
+
+function login() {
+
+let nama = document.getElementById("nama").value;
+let nim = document.getElementById("nim").value;
+
+if (nama === "" || nim === "") {
+
+alert("Nama dan NIM wajib diisi!");
+
+return;
+
+}
+
+localStorage.setItem("nama", nama);
+localStorage.setItem("nim", nim);
+
+window.location.href = "dashboard.html";
+
+}
+
+const nama = localStorage.getItem("nama");
+
+if(nama==null){
+
+window.location.href="index.html";
+
+}
+
+document.getElementById("welcome").innerHTML =
+"Selamat Datang, " + nama;
+
+function logout(){
+
+localStorage.clear();
+
+window.location.href="index.html";
+
+}
